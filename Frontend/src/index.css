@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --theme-background: #f8a09e;
+  --theme-color : #f15754;
+  --on-theme-color : whitesmoke;
+  --theme-color-hover : #e41f1b;
+  --on-theme-color-hover : whitesmoke;
+  --theme-color-input-border : #ccc;
+  --theme-color-form-background : #fff;
+  --theme-disabled: #ff8381;
+}
+
+@import url("./css/bootstrap_red_theme_full.min.css");
+
+
+.bg-primary {
+  background-color: var(--theme-color);
+}
+
+.text-primary {
+  color: var(--theme-color);
+}
+
+.text-on-primary {
+  color: var(--on-theme-color);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.text-muted {
+  color: grey;
+}
+
+
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+
+.form-control {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--theme-color-input-border);
+  border-radius: 5px;
+  outline: none;
+}
+
+
+.form-control:focus {
+  border: 2px solid var(--theme-color);
+}
+
+.btn {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--theme-color);
+  color: var(--on-theme-color);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--theme-color);
+}
+
+
+.btn-primary:hover {
+  background-color: var(--theme-color-hover);
+}
+
+
+.card {
+  width: 18rem;
+  margin: 10px;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.full-page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.border-primary {
+  border: 1px solid var(--theme-color);
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
