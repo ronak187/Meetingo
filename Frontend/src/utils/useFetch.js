@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 
-const useFetch = (request) => {
+const useFetch = (request, userId = null) => {
 
     console.log("useFetch called");
-    
+
     const baseUrl = "http://localhost:9090";
     const url = baseUrl + request;
-    
+
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -20,8 +20,19 @@ const useFetch = (request) => {
                 }
                 throw new Error("Could not fetch data at the moment");
             }).then(data => {
-                setData(data);
-                console.log(data);
+                let newData = [];
+
+                data.map(item => {
+                    if (item.userId == userId) {
+
+                    } else {
+                        newData.push(item);
+                    }
+                });
+
+                setData(newData);
+                console.log("Data", newData);
+                console.log(userId);
                 setLoading(false);
             }).catch(error => {
                 if (error.name === "AbortError") {
