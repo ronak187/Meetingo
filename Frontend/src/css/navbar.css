@@ -1,0 +1,40 @@
+.navbar {
+    background-color: var(--theme-color);
+    padding: 1rem;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.navbar > .row > .link, .navbar > .link {
+    margin-top: 0.3rem;
+    text-decoration: none;
+    padding: 10px;
+    color: var(--on-theme-color);
+}
+
+.navbar > .row > .link:nth-of-type(2) {
+    padding-left: 2rem;
+}
+
+.navbar > .row > .link:hover, .navbar > .link:hover {
+    text-decoration: underline;
+}
+
+.brand {
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.5rem;
+    color: var(--on-theme-color);
+    font-weight: bold;
+}
+
+.link-btn {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
