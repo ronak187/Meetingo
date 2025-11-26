@@ -46,7 +46,7 @@ function LoginComponent() {
                         title: "Login Successful",
                         text: "You have successfully logged in"
                     }).then(() => {
-                        navigator("/");
+                        navigator("/chat");
                     }); 
                 } else {
                     Swal.fire({

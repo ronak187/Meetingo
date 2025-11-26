@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/login-signup-form.css";
 import Swal from "sweetalert2";
 import { useState, useEffect } from "react";
@@ -62,17 +62,21 @@ const Signup = () => {
     }
 
 
+    const navigator = useNavigate();
 
     useEffect(() => {
-        if (triggerSignup) {
+        if (data != null && triggerSignup) {
             if (data.username !== undefined && data.email !== undefined && data.userId !== undefined) {
+                sessionStorage.setItem("user", JSON.stringify(data));
+                setTriggerSignup(false);
                 Swal.fire({
                     icon: "success",
                     title: "Signup Successful",
                     text: "You have successfully signed up!",
                     confirmButtonText: "Okay",
+                }).then(() => {
+                    navigator("/chat");
                 });
-                setTriggerSignup(false);
             } else {
                 Swal.fire({
                     icon: "error",

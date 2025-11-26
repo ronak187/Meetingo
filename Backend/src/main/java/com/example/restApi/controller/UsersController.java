@@ -70,7 +70,10 @@ public class UsersController {
              boolean res = userDetailsService.saveUser(userEntity);
              if (res) {
                  body.put("success", "true");
-                 body.put("message", "User has been registration");
+                 body.put("message", "User has been registered");
+                 body.put("username", userEntity.getUsername());
+                 body.put("email", userEntity.getEmail());
+                 body.put("userId", userEntity.getUserId());
 
                  responseEntity = new ResponseEntity<>(body, HttpStatus.CREATED);
              }
